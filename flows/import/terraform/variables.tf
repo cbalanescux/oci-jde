@@ -140,6 +140,6 @@ variable "products" {
 variable "dashboard_files" {
   description = "Dashboard JSON files"
   type = set(string)
-  default = ["EBS-Dashboards.json"]
+  default = ["JDE-Dashboard.json"]
   #default = ["eBS-sensors-dashboard.json"]
 }
