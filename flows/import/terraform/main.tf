@@ -10,7 +10,7 @@ locals {
   mgmtagent_dynamic_group_name = "Mgmtagent_Dynamicgroup_${local.timestamp}"
   mgmtagent_policy_name        = "Mgmtagent_Policies_${local.timestamp}"
   db_name                      = "${var.la_entity_name}"
-  log_group_name               = "EBSDBLogs"
+  log_group_name               = "JDEDBLogs"
   target_system                = "jd-edwards"
   kc_path                      = "../../../knowledge-content/${local.target_system}"
 }
@@ -185,7 +185,7 @@ module "logan_sources" {
 resource "null_resource" "import_lookups" {
 
   provisioner "local-exec" {
-    command = "python3 ./scripts/import_lookup.py -t Lookup -a ${var.auth_type} -p ${var.config_file_profile} -n \"EBS Functional Sensors\" -f ${local.kc_path}/logan-lookups/EBS_Lookup.csv"
+    command = "python3 ./scripts/import_lookup.py -t Lookup -a ${var.auth_type} -p ${var.config_file_profile} -n \"JDE Functional Sensors\" -f ${local.kc_path}/logan-lookups/JDE_Lookup.csv"
   }
 }
 
